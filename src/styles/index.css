@@ -21,7 +21,7 @@ code {
 
 
 #root {
-  width: 80%;
+  width: 90%;
   height: 80vh;
   background-color: crimson;
 }
@@ -31,9 +31,11 @@ code {
   background-color: blue;
   display: flex;
   justify-content: center;
-  height: 100%;
   width: 100%;
 }
+
+/* Entry Side Stuff */
+
 .entrySide {
   background-color: cadetblue;
   width: 50%;
@@ -43,25 +45,130 @@ code {
   align-items: center;
 }
 
+.personalInfo {
+  background-color: darkgoldenrod;
+  display: flex;
+  margin: 0.5rem;
+}
+.forms {
+  display: flex;
+}
+.workExperienceFormAndButton {
+  background-color: rgb(0, 255, 0);
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+.educationFormAndButton {
+  background-color: rgb(0, 255, 255);
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+.workExperienceForm {
+  background-color: darkgreen;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.4rem;
+}
+.educationSectionForm {
+  background-color: darkslategray;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.4rem;
+}
+
+
+
+
+
+
+/* CV Side Stuff */
+
 .cvSide {
+  display: flex;
+  flex-direction: column;
   background-color: blueviolet;
   width: 50%;
 }
 
-.personalInfo {
-  background-color: darkgoldenrod;
-  display: flex;
-  flex-direction: column;
-}
-
-.workExperienceEntry {
-  background-color: darkgreen;
-  display: flex;
-  flex-direction: column;
-}
-
-.educationSectionEntry {
+.personalInfoResume {
   background-color: darkslategray;
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+.fullNameResume {
+  font-size: 34px;
+}
+
+
+/* Work Experience */
+.workExperienceResume {
+  background-color: darkturquoise;
+  margin-top: 1rem;
+  margin-left: 0.4rem;
+  margin-right: 0.4rem;
+}
+.workExperienceSectionTitle {
+  font-size: 22px;
+  font-weight: 300;
+}
+
+.workExperienceEntry {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.4rem;
+}
+.companyNameResume {
+  background-color: blanchedalmond;
+  font-weight: 500;
+  font-size: 18px;
+}
+.positionTitleResume {
+  background-color: rgb(218, 139, 22);
+  margin-right: auto;
+}
+.companyLocationResume {
+  background-color: rgb(150, 212, 49);
+}
+.companyStartFinishResume {
+  background-color: rgb(17, 218, 151);
+}
+
+
+/* Education Section */
+.educationSectionResume {
+  background-color: forestgreen;
+  margin-top: 1rem;
+  margin-left: 0.4rem;
+  margin-right: 0.4rem;
+}
+.educationSectionTitle {
+  font-size: 22px;
+  font-weight: 300;
+}
+
+.educationSectionEntry {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.4rem;
+}
+.schoolNameResume {
+  background-color: blanchedalmond;
+  font-weight: 500;
+  font-size: 18px;
+}
+.schoolDegreeResume {
+  background-color: rgb(218, 139, 22);
+  margin-right: auto;
+}
+.schoolLocationResume {
+  background-color: rgb(150, 212, 49);
+}
+.schoolGraduationDateResume {
+  background-color: rgb(17, 218, 151);
 }
