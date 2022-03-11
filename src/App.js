@@ -89,6 +89,11 @@ class App extends Component {
   // add work experience
   clickedWorkXP = () => {
     console.log('add work xp clicked');
+
+    const testArrays = ['one', 'two', 'three'];
+
+    // eslint-disable-next-line max-len
+    return console.log(testArrays.map((testArray) => <li key={testArray}>{testArray}</li>));
   };
 
   // delete work experience
@@ -213,6 +218,12 @@ class App extends Component {
 
           <div className='workExperienceResume'>
             <div className='workExperienceSectionTitle'>Work Experience</div>
+
+            {/* CV Info to be added/removed */}
+
+            <div>{items}</div>
+
+            {/*
             <div className='workExperienceEntry'>
               <div className='companyNameResume'>
                 {this.state.workExperienceEntry.companyName}
@@ -231,10 +242,14 @@ class App extends Component {
                 {this.state.workExperienceEntry.companyEndDate}
               </div>
             </div>
+            */}
           </div>
 
           <div className='educationSectionResume'>
             <div className='educationSectionTitle'>Education</div>
+
+            {/* CV Info to be added/removed */}
+
             <div className='educationSectionEntry'>
               <div className='schoolNameResume'>
                 {this.state.educationEntry.schoolName}
