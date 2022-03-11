@@ -221,7 +221,7 @@ class App extends Component {
 
             {/* CV Info to be added/removed */}
 
-            <div>{items}</div>
+            <div>{}</div>
 
             {/*
             <div className='workExperienceEntry'>
