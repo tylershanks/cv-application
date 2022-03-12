@@ -20,21 +20,25 @@ class App extends Component {
         spacingLine: ' | ',
       },
 
-      workExperienceEntry: {
-        companyName: 'Company Name',
-        positionTitle: 'Position Title',
-        companyLocation: 'Company Location',
-        companyStartDate: 'YYYY-MM-DD',
-        companyEndDate: 'YYYY-MM-DD',
-        spacingDash: ' - ',
-      },
+      workExperienceEntry: [
+        {
+          companyName: 'oh my fucking god its working',
+          positionTitle: 'Position Title',
+          companyLocation: 'Company Location',
+          companyStartDate: 'YYYY-MM-DD',
+          companyEndDate: 'YYYY-MM-DD',
+          spacingDash: ' - ',
+        },
+      ],
 
-      educationEntry: {
-        schoolName: 'School Name',
-        schoolDegree: 'School Degree',
-        schoolLocation: 'School Location',
-        schoolGraduationDate: 'YYYY-MM-DD',
-      },
+      educationEntry: [
+        {
+          schoolName: 'School Name',
+          schoolDegree: 'School Degree',
+          schoolLocation: 'School Location',
+          schoolGraduationDate: 'YYYY-MM-DD',
+        },
+      ],
     };
   }
 
@@ -90,10 +94,11 @@ class App extends Component {
   clickedWorkXP = () => {
     console.log('add work xp clicked');
 
+    // eslint-disable-next-line no-unused-vars
     const testArrays = ['one', 'two', 'three'];
 
     // eslint-disable-next-line max-len
-    return console.log(testArrays.map((testArray) => <li key={testArray}>{testArray}</li>));
+    return console.log(this.state.workExperienceEntry.map((entryInfo) => entryInfo.companyName));
   };
 
   // delete work experience
