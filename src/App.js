@@ -2,6 +2,9 @@
 import React, {Component, useState} from 'react';
 import './styles/index.css';
 import './styles/App.css';
+import './components/personalInfo';
+// eslint-disable-next-line no-unused-vars
+import PersonalInfo from './components/personalInfo';
 
 /**
  * Main App.
@@ -111,27 +114,7 @@ class App extends Component {
 
           {/* Personal Info */}
 
-          <div className='personalInfo'>
-            <input
-              placeholder='Full Name'
-              id='fullName'
-              type='text'
-              onChange={this.changeHandlerPersonalInfo}
-            />
-            <input
-              placeholder='Email'
-              id='email'
-              type='text'
-              onChange={this.changeHandlerPersonalInfo}
-            />
-            <input
-              placeholder='Phone #'
-              id='phoneNumber'
-              type='tel'
-              pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'
-              onChange={this.changeHandlerPersonalInfo}
-            />
-          </div>
+          <PersonalInfo />
 
           {/* Forms */}
 
