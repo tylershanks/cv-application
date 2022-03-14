@@ -1,15 +1,16 @@
-// eslint-disable-next-line no-unused-vars
-import React, {Component, useState} from 'react';
+import React, {Component} from 'react';
 import './styles/index.css';
 import './styles/App.css';
 import './components/personalInfo';
-// eslint-disable-next-line no-unused-vars
 import PersonalInfo from './components/personalInfo';
+import WorkExperienceForm from './components/WorkExperienceForm';
+import EducationSectionForm from './components/EducationSectionForm';
+import PersonalInfoCVSide from './components/PersonalInfoCVSide';
+import WorkExperienceCVEntry from './components/WorkExperienceCVEntry';
+import EducationSectionCVEntry from './components/EducationSectionCVEntry';
 
-/**
- * Main App.
- * @param {event} event event
- */
+
+// eslint-disable-next-line require-jsdoc
 class App extends Component {
   // eslint-disable-next-line require-jsdoc
   constructor() {
@@ -25,7 +26,7 @@ class App extends Component {
 
       workExperienceEntry: [
         {
-          companyName: 'oh my fucking god its working',
+          companyName: 'Company Name',
           positionTitle: 'Position Title',
           companyLocation: 'Company Location',
           companyStartDate: 'YYYY-MM-DD',
@@ -96,15 +97,22 @@ class App extends Component {
   // add work experience
   clickedWorkXP = () => {
     console.log('add work xp clicked');
-
-    // eslint-disable-next-line no-unused-vars
-    const testArrays = ['one', 'two', 'three'];
-
-    // eslint-disable-next-line max-len
-    return console.log(this.state.workExperienceEntry.map((entryInfo) => entryInfo.companyName));
+    this.setState({workExperienceEntry: [...this.state.workExperienceEntry, {
+      companyName: 'Company Name',
+      positionTitle: 'Position Title',
+      companyLocation: 'Company Location',
+      companyStartDate: 'YYYY-MM-DD',
+      companyEndDate: 'YYYY-MM-DD',
+      spacingDash: ' - ',
+    }]});
+    console.log(this.state.workExperienceEntry.length);
   };
 
   // delete work experience
+  clickedDeleteWorkXP = (index) => {
+    console.log('delete work xp clicked');
+    console.log(index.id);
+  };
 
   // eslint-disable-next-line require-jsdoc
   render() {
@@ -113,77 +121,30 @@ class App extends Component {
         <div className='entrySide'>
 
           {/* Personal Info */}
-
-          <PersonalInfo />
+          <PersonalInfo
+            personalInfo={this.state.personalInfo}
+            onChange={this.changeHandlerPersonalInfo}
+          />
 
           {/* Forms */}
-
           <div className='forms'>
             <div className='workExperienceFormAndButton'>
-              <div className='workExperienceForm'>
-                <input
-                  placeholder='Company Name'
-                  id='companyName'
-                  type='text'
-                  onChange={this.changeHandlerWorkExperience}
-                />
-                <input
-                  placeholder='Position Title'
-                  id='positionTitle'
-                  type='text'
-                  onChange={this.changeHandlerWorkExperience}
-                />
-                <input
-                  placeholder='Company Location'
-                  id='companyLocation'
-                  type='text'
-                  onChange={this.changeHandlerWorkExperience}
-                />
-                Start Date
-                <input
-                  type='date'
-                  id='companyStartDate'
-                  onChange={this.changeHandlerWorkExperience}
-                />
-                End Date
-                <input
-                  type='date'
-                  id='companyEndDate'
-                  onChange={this.changeHandlerWorkExperience}
-                />
-                <button id='deleteWorkExperience'>Delete</button>
-              </div>
+              <WorkExperienceForm
+                workExperienceEntry={this.state.workExperienceEntry}
+                clickedDeleteWorkXP={this.clickedDeleteWorkXP}
+                onChange={this.changeHandlerWorkExperience}
+              />
+
               <button
                 id='addWorkExperience'
                 onClick={this.clickedWorkXP}
               >Add Work Experience</button>
             </div>
+
             <div className='educationFormAndButton'>
-              <div className='educationSectionForm'>
-                <input
-                  placeholder='School'
-                  id='schoolName'
-                  onChange={this.changeHandlerEducation}
-                />
-                <input
-                  placeholder='Degree'
-                  id='schoolDegree'
-                  onChange={this.changeHandlerEducation}
-                />
-                <input
-                  placeholder='School Location'
-                  id='schoolLocation'
-                  onChange={this.changeHandlerEducation}
-                />
-                Graduation Date
-                <input
-                  type="date"
-                  id="schoolGraduationDate"
-                  onChange={this.changeHandlerEducation}
-                />
-                <button
-                  id='deleteEducation'>Delete</button>
-              </div>
+              <EducationSectionForm
+                onChange={this.changeHandlerEducation}
+              />
               <button id='addEducation'>Add Education</button>
             </div>
           </div>
@@ -193,68 +154,28 @@ class App extends Component {
         {/* CV Side */}
 
         <div className='cvSide'>
-          <div className='personalInfoResume'>
-            <div className='fullNameResume'>
-              {this.state.personalInfo.fullName}
-            </div>
-            <div className='emailPhoneNumber'>
-              {this.state.personalInfo.email}
-              {this.state.personalInfo.spacingLine}
-              {this.state.personalInfo.phoneNumber}
-            </div>
-          </div>
-
+          <PersonalInfoCVSide
+            personalInfo={this.state.personalInfo}
+          />
           <div className='workExperienceResume'>
             <div className='workExperienceSectionTitle'>Work Experience</div>
-
             {/* CV Info to be added/removed */}
-
-            <div>{}</div>
-
-            {/*
-            <div className='workExperienceEntry'>
-              <div className='companyNameResume'>
-                {this.state.workExperienceEntry.companyName}
-                {this.state.personalInfo.spacingLine}
-              </div>
-              <div className='positionTitleResume'>
-                {this.state.workExperienceEntry.positionTitle}
-              </div>
-              <div className='companyLocationResume'>
-                {this.state.workExperienceEntry.companyLocation}
-                {this.state.personalInfo.spacingLine}
-              </div>
-              <div className='companyStartFinishResume'>
-                {this.state.workExperienceEntry.companyStartDate}
-                {this.state.workExperienceEntry.spacingDash}
-                {this.state.workExperienceEntry.companyEndDate}
-              </div>
-            </div>
-            */}
+            <WorkExperienceCVEntry
+              workExperienceEntry={this.state.workExperienceEntry}
+              personalInfo={this.state.personalInfo}
+            />
           </div>
 
           <div className='educationSectionResume'>
             <div className='educationSectionTitle'>Education</div>
-
             {/* CV Info to be added/removed */}
-
-            <div className='educationSectionEntry'>
-              <div className='schoolNameResume'>
-                {this.state.educationEntry.schoolName}
-                {this.state.personalInfo.spacingLine}
-              </div>
-              <div className='schoolDegreeResume'>
-                {this.state.educationEntry.schoolDegree}
-              </div>
-              <div className='schoolLocationResume'>
-                {this.state.educationEntry.schoolLocation}
-                {this.state.personalInfo.spacingLine}</div>
-              <div className='schoolGraduationDateResume'>
-                {this.state.educationEntry.schoolGraduationDate}
-              </div>
-            </div>
+            <EducationSectionCVEntry
+              educationEntry={this.state.educationEntry}
+              personalInfo={this.state.personalInfo}
+            />
           </div>
         </div>
+        {console.log(this.state.workExperienceEntry.companyLocation)}
       </div>
     );
   }
