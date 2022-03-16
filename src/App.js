@@ -27,26 +27,26 @@ class App extends Component {
       },
 
       workExperienceEntry: [
-        /* {
+        {
 
           identity: uuid(),
-          companyName: 'Company Name',
-          positionTitle: 'Position Title',
-          companyLocation: 'Company Location',
-          companyStartDate: 'YYYY-MM-DD',
-          companyEndDate: 'YYYY-MM-DD',
+          companyName: '',
+          positionTitle: '',
+          companyLocation: '',
+          companyStartDate: '',
+          companyEndDate: '',
           spacingDash: ' - ',
-        },*/
+        },
       ],
 
-      educationEntry: [/*
+      educationEntry: [
         {
           identity: uuid(),
-          schoolName: 'School Name',
-          schoolDegree: 'School Degree',
-          schoolLocation: 'School Location',
-          schoolGraduationDate: 'YYYY-MM-DD',
-        },*/
+          schoolName: '',
+          schoolDegree: '',
+          schoolLocation: '',
+          schoolGraduationDate: '',
+        },
       ],
     };
     this.changeHandlerEducation = this.changeHandlerEducation.bind(this);
@@ -88,14 +88,16 @@ class App extends Component {
   // Any time an input field is changed in the education section,
   // update the state which links to the right hand side's text.
   // eslint-disable-next-line require-jsdoc
-  changeHandlerEducation = (inputUser) => {
-    this.setState((prevState) => {
-      const newUsers = prevState.educationEntry.map((element) => {
-        if (element.key === inputUser.key) return inputUser;
-        return element;
-      });
-      return {educationEntry: newUsers};
-    });
+  changeHandlerEducation = (event) => {
+    // eslint-disable-next-line max-len
+    if (['schoolName', 'schoolDegree', 'schoolLocation', 'schoolGraduationDate'].includes(event.target.name)) {
+      const educationEntry = [...this.state.educationEntry];
+      // eslint-disable-next-line max-len
+      educationEntry[event.target.id][event.target.name] = event.target.value;
+      this.setState({educationEntry});
+    } else {
+      this.setState({[event.target.name]: event.target.value});
+    }
   };
 
   // add work experience
@@ -103,11 +105,11 @@ class App extends Component {
     console.log('add work xp clicked');
     this.setState({workExperienceEntry: [...this.state.workExperienceEntry, {
       identity: uuid(),
-      companyName: 'Company Name',
-      positionTitle: 'Position Title',
-      companyLocation: 'Company Location',
-      companyStartDate: 'YYYY-MM-DD',
-      companyEndDate: 'YYYY-MM-DD',
+      companyName: '',
+      positionTitle: '',
+      companyLocation: '',
+      companyStartDate: '',
+      companyEndDate: '',
       spacingDash: ' - ',
     }]});
   };
@@ -115,10 +117,9 @@ class App extends Component {
   // delete work experience
   clickedDeleteWorkXP = (index) => {
     console.log('delete work xp clicked');
-    console.log(index);
     const item = index;
     const newList = [].concat(this.state.workExperienceEntry);
-    newList.splice(item.index, 1);
+    newList.splice(item, 1);
     this.setState({workExperienceEntry: newList});
   };
 
@@ -127,10 +128,10 @@ class App extends Component {
     console.log('add education clicked');
     this.setState({educationEntry: [...this.state.educationEntry, {
       identity: uuid(),
-      schoolName: 'School Name',
-      schoolDegree: 'School Degree',
-      schoolLocation: 'School Location',
-      schoolGraduationDate: 'YYYY-MM-DD',
+      schoolName: '',
+      schoolDegree: '',
+      schoolLocation: '',
+      schoolGraduationDate: '',
     }]});
   };
 

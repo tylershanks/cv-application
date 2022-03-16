@@ -6,23 +6,31 @@ const EducationSectionForm = (props) => {
     <div className='educationSectionForm' key={index}>
       <input
         placeholder='School'
+        name='schoolName'
         id={index}
+        value={props.educationEntry[index].schoolName}
         onChange={props.onChange}
       />
       <input
         placeholder='Degree'
+        name='schoolDegree'
         id={index}
+        value={props.educationEntry[index].schoolDegree}
         onChange={props.onChange}
       />
       <input
         placeholder='School Location'
+        name='schoolLocation'
         id={index}
+        value={props.educationEntry[index].schoolLocation}
         onChange={props.onChange}
       />
     Graduation Date
       <input
         type="date"
+        name='schoolGraduationDate'
         id={index}
+        value={props.educationEntry[index].schoolGraduationDate}
         onChange={props.onChange}
       />
       <button

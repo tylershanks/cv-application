@@ -7,6 +7,7 @@ const workExperienceForm = (props) => {
         placeholder='Company Name'
         name='companyName'
         id={index}
+        value={props.workExperienceEntry[index].companyName}
         type='text'
         onChange={props.onChange}
       />
@@ -14,6 +15,7 @@ const workExperienceForm = (props) => {
         placeholder='Position Title'
         name='positionTitle'
         id={index}
+        value={props.workExperienceEntry[index].positionTitle}
         type='text'
         onChange={props.onChange}
       />
@@ -21,6 +23,7 @@ const workExperienceForm = (props) => {
         placeholder='Company Location'
         name='companyLocation'
         id={index}
+        value={props.workExperienceEntry[index].companyLocation}
         type='text'
         onChange={props.onChange}
       />
@@ -29,6 +32,7 @@ const workExperienceForm = (props) => {
         type='date'
         name='companyStartDate'
         id={index}
+        value={props.workExperienceEntry[index].companyStartDate}
         onChange={props.onChange}
       />
                 End Date
@@ -36,6 +40,7 @@ const workExperienceForm = (props) => {
         type='date'
         name='companyEndDate'
         id={index}
+        value={props.workExperienceEntry[index].companyEndDate}
         onChange={props.onChange}
       />
       <button

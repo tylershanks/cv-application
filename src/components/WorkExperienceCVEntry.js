@@ -3,22 +3,23 @@ import React from 'react';
 
 const WorkExperienceCVEntry = (props) => {
   const workExperienceFormList = props.workExperienceEntry.map((entry, index) =>
-    <div className='workExperienceEntry' key={index}>
+    <div className='workExperienceEntry' key={index} id={index}>
       <div className='companyNameResume'>
-        {props.workExperienceEntry.companyName}
+        {/* eslint-disable-next-line max-len*/}
+        {props.workExperienceEntry[index].companyName}
         {props.personalInfo.spacingLine}
       </div>
       <div className='positionTitleResume'>
-        {props.workExperienceEntry.positionTitle}
+        {props.workExperienceEntry[index].positionTitle}
       </div>
       <div className='companyLocationResume'>
-        {props.workExperienceEntry.companyLocation}
+        {props.workExperienceEntry[index].companyLocation}
         {props.personalInfo.spacingLine}
       </div>
       <div className='companyStartFinishResume'>
-        {props.workExperienceEntry.companyStartDate}
-        {props.workExperienceEntry.spacingDash}
-        {props.workExperienceEntry.companyEndDate}
+        {props.workExperienceEntry[index].companyStartDate}
+        {props.workExperienceEntry[index].spacingDash}
+        {props.workExperienceEntry[index].companyEndDate}
       </div>
     </div>,
   );
