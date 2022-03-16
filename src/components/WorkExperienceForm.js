@@ -5,36 +5,41 @@ const workExperienceForm = (props) => {
     <div className='workExperienceForm' key={index}>
       <input
         placeholder='Company Name'
-        id='companyName'
+        name='companyName'
+        id={index}
         type='text'
         onChange={props.onChange}
       />
       <input
         placeholder='Position Title'
-        id='positionTitle'
+        name='positionTitle'
+        id={index}
         type='text'
         onChange={props.onChange}
       />
       <input
         placeholder='Company Location'
-        id='companyLocation'
+        name='companyLocation'
+        id={index}
         type='text'
         onChange={props.onChange}
       />
                 Start Date
       <input
         type='date'
-        id='companyStartDate'
+        name='companyStartDate'
+        id={index}
         onChange={props.onChange}
       />
                 End Date
       <input
         type='date'
-        id='companyEndDate'
+        name='companyEndDate'
+        id={index}
         onChange={props.onChange}
       />
       <button
-        id='deleteWorkExperience'
+        id={index}
         onClick={props.clickedDeleteWorkXP}>Delete</button>
     </div>,
   );
