@@ -88,12 +88,12 @@ code {
 .cvSide {
   display: flex;
   flex-direction: column;
-  background-color: blueviolet;
+  background-color: rgb(43, 226, 104);
   width: 50%;
 }
 
 .personalInfoResume {
-  background-color: darkslategray;
+  background-color: rgb(6, 37, 2);
   display: flex;
   flex-direction: column;
   align-items: center;
