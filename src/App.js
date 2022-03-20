@@ -117,10 +117,10 @@ class App extends Component {
   // delete work experience
   clickedDeleteWorkXP = (index) => {
     console.log('delete work xp clicked');
-    const item = index;
-    const newList = [].concat(this.state.workExperienceEntry);
-    newList.splice(item, 1);
-    this.setState({workExperienceEntry: newList});
+    const array = [...this.state.workExperienceEntry];
+    const id = index.target.id;
+    array.splice(id, 1);
+    this.setState({workExperienceEntry: array});
   };
 
   // add education
@@ -138,11 +138,10 @@ class App extends Component {
   // delete education
   clickedDeleteEducation = (index) => {
     console.log('delete education clicked');
-    console.log(index);
-    const item = index;
-    const newList = [].concat(this.state.educationEntry);
-    newList.splice(item.index, 1);
-    this.setState({educationEntry: newList});
+    const array = [...this.state.educationEntry];
+    const id = index.target.id;
+    array.splice(id, 1);
+    this.setState({educationEntry: array});
   };
 
   // eslint-disable-next-line require-jsdoc

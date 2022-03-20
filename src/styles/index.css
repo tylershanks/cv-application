@@ -11,7 +11,8 @@ body {
   align-items: center;
   justify-content: center;
   margin: 0;
-  min-height: 100vh;
+  min-height: 90vh;
+  background-color: rgb(160, 160, 160);
 }
 
 code {
@@ -23,30 +24,41 @@ code {
 #root {
   width: 90%;
   height: 80vh;
-  background-color: crimson;
+  /*background-color: crimson;*/
 }
 
 
 .container {
-  background-color: blue;
+  /*background-color: blue;*/
   display: flex;
   justify-content: center;
   width: 100%;
 }
 
+input{
+  border: none;
+  margin: 0.5rem;
+  border-radius: 3px;
+  padding: 0.2rem;
+}
+
 /* Entry Side Stuff */
 
 .entrySide {
-  background-color: cadetblue;
+  background-color: #ddd;
   width: 50%;
+  min-width: 700px;
+  margin-right: 1rem;
+  border-radius: 10px;
   
   display: flex;
   flex-direction: column;
   align-items: center;
+  filter: drop-shadow(0 0 0.75rem black);
 }
 
 .personalInfo {
-  background-color: darkgoldenrod;
+  /*background-color: darkgoldenrod;*/
   display: flex;
   margin: 0.5rem;
 }
@@ -54,29 +66,36 @@ code {
   display: flex;
 }
 .workExperienceFormAndButton {
-  background-color: rgb(0, 255, 0);
+  /*background-color: rgb(0, 255, 0);*/
   display: flex;
   flex-direction: column;
   margin: 1rem;
+  width: 240px;
 }
 .educationFormAndButton {
-  background-color: rgb(0, 255, 255);
+  /*background-color: rgb(0, 255, 255);*/
   display: flex;
   flex-direction: column;
   margin: 1rem;
+  width: 240px;
 }
 .workExperienceForm {
-  background-color: darkgreen;
+  /*background-color: darkgreen;*/
   display: flex;
   flex-direction: column;
   margin-bottom: 0.4rem;
+  border: solid aliceblue;
+  padding: 0.7rem;
 }
 .educationSectionForm {
-  background-color: darkslategray;
+  /*background-color: darkslategray;*/
   display: flex;
   flex-direction: column;
   margin-bottom: 0.4rem;
+  border: solid aliceblue;
+  padding: 0.7rem;
 }
+
 
 
 
@@ -88,15 +107,20 @@ code {
 .cvSide {
   display: flex;
   flex-direction: column;
-  background-color: rgb(43, 226, 104);
-  width: 50%;
+  background-color: rgb(255, 255, 255);
+  min-width: 595px;
+  height: 770px;
+  filter: drop-shadow(0 0 0.75rem black);
+
 }
 
 .personalInfoResume {
-  background-color: rgb(6, 37, 2);
+  background-color: rgb(109, 109, 109);
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 90px;
 }
 
 .fullNameResume {
@@ -106,10 +130,10 @@ code {
 
 /* Work Experience */
 .workExperienceResume {
-  background-color: darkturquoise;
+  /*background-color: darkturquoise;*/
   margin-top: 1rem;
-  margin-left: 0.4rem;
-  margin-right: 0.4rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 .workExperienceSectionTitle {
   font-size: 22px;
@@ -123,28 +147,28 @@ code {
   margin-top: 0.4rem;
 }
 .companyNameResume {
-  background-color: blanchedalmond;
+  /*background-color: blanchedalmond;*/
   font-weight: 500;
   font-size: 18px;
 }
 .positionTitleResume {
-  background-color: rgb(218, 139, 22);
+  /*background-color: rgb(218, 139, 22);*/
   margin-right: auto;
 }
 .companyLocationResume {
-  background-color: rgb(150, 212, 49);
+  /*background-color: rgb(150, 212, 49);*/
 }
 .companyStartFinishResume {
-  background-color: rgb(17, 218, 151);
+  /*background-color: rgb(17, 218, 151);*/
 }
 
 
 /* Education Section */
 .educationSectionResume {
-  background-color: forestgreen;
+  /*background-color: forestgreen;*/
   margin-top: 1rem;
-  margin-left: 0.4rem;
-  margin-right: 0.4rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 .educationSectionTitle {
   font-size: 22px;
@@ -158,17 +182,17 @@ code {
   margin-top: 0.4rem;
 }
 .schoolNameResume {
-  background-color: blanchedalmond;
+  /*background-color: blanchedalmond;*/
   font-weight: 500;
   font-size: 18px;
 }
 .schoolDegreeResume {
-  background-color: rgb(218, 139, 22);
+  /*background-color: rgb(218, 139, 22);*/
   margin-right: auto;
 }
 .schoolLocationResume {
-  background-color: rgb(150, 212, 49);
+  /*background-color: rgb(150, 212, 49);*/
 }
 .schoolGraduationDateResume {
-  background-color: rgb(17, 218, 151);
+  /*background-color: rgb(17, 218, 151);*/
 }
