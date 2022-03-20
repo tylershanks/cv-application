@@ -147,67 +147,70 @@ class App extends Component {
   // eslint-disable-next-line require-jsdoc
   render() {
     return (
-      <div className='container'>
-        <div className='entrySide'>
+      <div className='linkAndContainer'>
+        <a href="https://github.com/tylershanks/cv-application" target="_blank" rel="noreferrer" className='githubLink'>Tyler Shanks Github</a>
+        <div className='container'>
+          <div className='entrySide'>
 
-          {/* Personal Info */}
-          <PersonalInfo
-            personalInfo={this.state.personalInfo}
-            onChange={this.changeHandlerPersonalInfo}
-          />
+            {/* Personal Info */}
+            <PersonalInfo
+              personalInfo={this.state.personalInfo}
+              onChange={this.changeHandlerPersonalInfo}
+            />
 
-          {/* Forms */}
-          <div className='forms'>
-            <div className='workExperienceFormAndButton'>
-              <WorkExperienceForm
+            {/* Forms */}
+            <div className='forms'>
+              <div className='workExperienceFormAndButton'>
+                <WorkExperienceForm
+                  workExperienceEntry={this.state.workExperienceEntry}
+                  clickedDeleteWorkXP={this.clickedDeleteWorkXP}
+                  onChange={this.changeHandlerWorkExperience}
+                />
+
+                <button
+                  id='addWorkExperience'
+                  onClick={this.clickedWorkXP}
+                >Add Work Experience</button>
+              </div>
+
+              <div className='educationFormAndButton'>
+                <EducationSectionForm
+                  educationEntry={this.state.educationEntry}
+                  clickedDeleteEducation={this.clickedDeleteEducation}
+                  onChange={this.changeHandlerEducation}
+                />
+                <button id='addEducation'
+                  onClick={this.clickedAddEducation}
+                >Add Education</button>
+              </div>
+            </div>
+          </div>
+
+
+          {/* CV Side */}
+
+          <div className='cvSide'>
+            <PersonalInfoCVSide
+              personalInfo={this.state.personalInfo}
+            />
+
+            <div className='workExperienceResume'>
+              <div className='workExperienceSectionTitle'>Work Experience</div>
+              {/* CV Info to be added/removed */}
+              <WorkExperienceCVEntry
                 workExperienceEntry={this.state.workExperienceEntry}
-                clickedDeleteWorkXP={this.clickedDeleteWorkXP}
-                onChange={this.changeHandlerWorkExperience}
+                personalInfo={this.state.personalInfo}
               />
-
-              <button
-                id='addWorkExperience'
-                onClick={this.clickedWorkXP}
-              >Add Work Experience</button>
             </div>
 
-            <div className='educationFormAndButton'>
-              <EducationSectionForm
+            <div className='educationSectionResume'>
+              <div className='educationSectionTitle'>Education</div>
+              {/* CV Info to be added/removed */}
+              <EducationSectionCVEntry
                 educationEntry={this.state.educationEntry}
-                clickedDeleteEducation={this.clickedDeleteEducation}
-                onChange={this.changeHandlerEducation}
+                personalInfo={this.state.personalInfo}
               />
-              <button id='addEducation'
-                onClick={this.clickedAddEducation}
-              >Add Education</button>
             </div>
-          </div>
-        </div>
-
-
-        {/* CV Side */}
-
-        <div className='cvSide'>
-          <PersonalInfoCVSide
-            personalInfo={this.state.personalInfo}
-          />
-
-          <div className='workExperienceResume'>
-            <div className='workExperienceSectionTitle'>Work Experience</div>
-            {/* CV Info to be added/removed */}
-            <WorkExperienceCVEntry
-              workExperienceEntry={this.state.workExperienceEntry}
-              personalInfo={this.state.personalInfo}
-            />
-          </div>
-
-          <div className='educationSectionResume'>
-            <div className='educationSectionTitle'>Education</div>
-            {/* CV Info to be added/removed */}
-            <EducationSectionCVEntry
-              educationEntry={this.state.educationEntry}
-              personalInfo={this.state.personalInfo}
-            />
           </div>
         </div>
       </div>

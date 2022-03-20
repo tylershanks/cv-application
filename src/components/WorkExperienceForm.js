@@ -9,6 +9,7 @@ const workExperienceForm = (props) => {
         id={index}
         value={props.workExperienceEntry[index].companyName}
         type='text'
+        maxLength='22'
         onChange={props.onChange}
       />
       <input
@@ -17,6 +18,7 @@ const workExperienceForm = (props) => {
         id={index}
         value={props.workExperienceEntry[index].positionTitle}
         type='text'
+        maxLength='20'
         onChange={props.onChange}
       />
       <input
@@ -25,6 +27,7 @@ const workExperienceForm = (props) => {
         id={index}
         value={props.workExperienceEntry[index].companyLocation}
         type='text'
+        maxLength='14'
         onChange={props.onChange}
       />
                 Start Date

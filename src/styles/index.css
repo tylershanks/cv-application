@@ -42,6 +42,16 @@ input{
   padding: 0.2rem;
 }
 
+.linkAndContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.githubLink {
+  margin-bottom: 1rem;
+}
+
 /* Entry Side Stuff */
 
 .entrySide {
@@ -154,12 +164,15 @@ input{
 .positionTitleResume {
   /*background-color: rgb(218, 139, 22);*/
   margin-right: auto;
+  margin-left: 4px;
 }
 .companyLocationResume {
   /*background-color: rgb(150, 212, 49);*/
+  margin-left: 0.5rem;
 }
 .companyStartFinishResume {
   /*background-color: rgb(17, 218, 151);*/
+  margin-left: 4px;
 }
 
 
@@ -189,10 +202,13 @@ input{
 .schoolDegreeResume {
   /*background-color: rgb(218, 139, 22);*/
   margin-right: auto;
+  margin-left: 4px;
 }
 .schoolLocationResume {
   /*background-color: rgb(150, 212, 49);*/
+  margin-left: 0.5rem;
 }
 .schoolGraduationDateResume {
   /*background-color: rgb(17, 218, 151);*/
+  margin-left: 4px;
 }

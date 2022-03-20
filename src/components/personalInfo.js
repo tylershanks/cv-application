@@ -7,6 +7,7 @@ const PersonalInfo = (props) => (
       placeholder={props.personalInfo.fullName}
       id='fullName'
       type='text'
+      maxLength='28'
       // eslint-disable-next-line react/prop-types
       onChange={props.onChange}
     />
@@ -14,6 +15,7 @@ const PersonalInfo = (props) => (
       placeholder='Email'
       id='email'
       type='text'
+      maxLength='40'
       // eslint-disable-next-line react/prop-types
       onChange={props.onChange}
     />
@@ -22,6 +24,7 @@ const PersonalInfo = (props) => (
       id='phoneNumber'
       type='tel'
       pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'
+      maxLength='12'
       // eslint-disable-next-line react/prop-types
       onChange={props.onChange}
     />
