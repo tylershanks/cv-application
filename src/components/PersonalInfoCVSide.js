@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import {adjustedPhoneNumber} from './PhoneNumberAdjust';
 
 const PersonalInfoCVSide = (props) => (
   <div className='personalInfoResume'>
@@ -9,7 +10,7 @@ const PersonalInfoCVSide = (props) => (
     <div className='emailPhoneNumber'>
       {props.personalInfo.email}
       {props.personalInfo.spacingLine}
-      {props.personalInfo.phoneNumber}
+      {adjustedPhoneNumber(props.personalInfo.phoneNumber)}
     </div>
   </div>
 );

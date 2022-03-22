@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import {adjustedDate} from './DateAdjust';
 
 const EducationSectionCVEntry = (props) => {
   const EducationSectionCVEntry = props.educationEntry.map((entry, index) =>
@@ -15,7 +16,7 @@ const EducationSectionCVEntry = (props) => {
         {props.educationEntry[index].schoolLocation}
         {props.personalInfo.spacingLine}</div>
       <div className='schoolGraduationDateResume'>
-        {props.educationEntry[index].schoolGraduationDate}
+        {adjustedDate( props.educationEntry[index].schoolGraduationDate)}
       </div>
     </div>,
   );

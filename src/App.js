@@ -22,7 +22,7 @@ class App extends Component {
       personalInfo: {
         fullName: 'Full Name',
         email: 'Email',
-        phoneNumber: '999-999-9999',
+        phoneNumber: '9999999999',
         spacingLine: ' | ',
       },
 
@@ -67,6 +67,23 @@ class App extends Component {
         [event.target.id]: value,
       },
     }));
+  };
+
+  changeHandlerPersonalInfoNumber = (event) => {
+    event.persist();
+    const re = /^[0-9\b]+$/;
+
+    const value = event.target.value;
+
+    if (event.target.value === '' || re.test(event.target.value)) {
+    // Changes the state without breaking anything that is already there
+      this.setState((prevState) => ({
+        personalInfo: {
+          ...prevState.personalInfo,
+          [event.target.id]: value,
+        },
+      }));
+    }
   };
 
   // Work Experience
@@ -156,6 +173,7 @@ class App extends Component {
             <PersonalInfo
               personalInfo={this.state.personalInfo}
               onChange={this.changeHandlerPersonalInfo}
+              onChangeNumber={this.changeHandlerPersonalInfoNumber}
             />
 
             {/* Forms */}

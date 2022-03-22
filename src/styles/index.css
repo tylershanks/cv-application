@@ -11,7 +11,7 @@ body {
   align-items: center;
   justify-content: center;
   margin: 0;
-  min-height: 90vh;
+  min-height: 80vh;
   background-color: rgb(160, 160, 160);
 }
 
@@ -33,6 +33,7 @@ code {
   display: flex;
   justify-content: center;
   width: 100%;
+  flex-wrap: wrap;
 }
 
 input{
@@ -49,16 +50,15 @@ input{
 }
 
 .githubLink {
-  margin-bottom: 1rem;
+  margin-top: 0.3rem;
 }
 
 /* Entry Side Stuff */
 
 .entrySide {
   background-color: #ddd;
-  width: 50%;
-  min-width: 700px;
-  margin-right: 1rem;
+  min-width: 750px;
+  margin: 1rem;
   border-radius: 10px;
   
   display: flex;
@@ -118,9 +118,10 @@ input{
   display: flex;
   flex-direction: column;
   background-color: rgb(255, 255, 255);
-  min-width: 595px;
+  min-width: 750px;
   height: 770px;
   filter: drop-shadow(0 0 0.75rem black);
+  margin: 1rem;
 
 }
 
@@ -146,7 +147,7 @@ input{
   margin-right: 1rem;
 }
 .workExperienceSectionTitle {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 300;
 }
 
@@ -159,7 +160,7 @@ input{
 .companyNameResume {
   /*background-color: blanchedalmond;*/
   font-weight: 500;
-  font-size: 18px;
+  font-size: 14px;
 }
 .positionTitleResume {
   /*background-color: rgb(218, 139, 22);*/
@@ -184,7 +185,7 @@ input{
   margin-right: 1rem;
 }
 .educationSectionTitle {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 300;
 }
 
@@ -197,7 +198,7 @@ input{
 .schoolNameResume {
   /*background-color: blanchedalmond;*/
   font-weight: 500;
-  font-size: 18px;
+  font-size: 14px;
 }
 .schoolDegreeResume {
   /*background-color: rgb(218, 139, 22);*/

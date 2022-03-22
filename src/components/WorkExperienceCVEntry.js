@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import {adjustedDate} from './DateAdjust';
 
 const WorkExperienceCVEntry = (props) => {
   const workExperienceFormList = props.workExperienceEntry.map((entry, index) =>
     <div className='workExperienceEntry' key={index} id={index}>
       <div className='companyNameResume'>
-        {/* eslint-disable-next-line max-len*/}
         {props.workExperienceEntry[index].companyName}
         {props.personalInfo.spacingLine}
       </div>
@@ -17,9 +17,9 @@ const WorkExperienceCVEntry = (props) => {
         {props.personalInfo.spacingLine}
       </div>
       <div className='companyStartFinishResume'>
-        {props.workExperienceEntry[index].companyStartDate}
+        {adjustedDate(props.workExperienceEntry[index].companyStartDate)}
         {props.workExperienceEntry[index].spacingDash}
-        {props.workExperienceEntry[index].companyEndDate}
+        {adjustedDate(props.workExperienceEntry[index].companyEndDate)}
       </div>
     </div>,
   );

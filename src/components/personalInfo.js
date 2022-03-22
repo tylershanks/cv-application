@@ -20,13 +20,12 @@ const PersonalInfo = (props) => (
       onChange={props.onChange}
     />
     <input
-      placeholder='Phone #'
+      placeholder='Phone # (Enter Numbers)'
       id='phoneNumber'
       type='tel'
-      pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'
-      maxLength='12'
+      maxLength='10'
       // eslint-disable-next-line react/prop-types
-      onChange={props.onChange}
+      onChange={props.onChangeNumber}
     />
   </div>
 );

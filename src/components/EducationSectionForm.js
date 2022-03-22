@@ -15,7 +15,7 @@ const EducationSectionForm = (props) => {
       <input
         placeholder='Degree'
         name='schoolDegree'
-        maxLength='14'
+        maxLength='20'
         id={index}
         value={props.educationEntry[index].schoolDegree}
         onChange={props.onChange}
@@ -23,7 +23,7 @@ const EducationSectionForm = (props) => {
       <input
         placeholder='School Location'
         name='schoolLocation'
-        maxLength='14'
+        maxLength='20'
         id={index}
         value={props.educationEntry[index].schoolLocation}
         onChange={props.onChange}
